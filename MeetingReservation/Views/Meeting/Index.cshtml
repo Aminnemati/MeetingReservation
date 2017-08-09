@@ -1,0 +1,40 @@
+﻿@model List<MeetingReservation.Models.Meeting>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="padding-right: 10px;">جلسات</h2>
+<a class="button" href="#" style="margin-right: 10px;">ثبت جلسه جدید</a>
+<table>
+    <thead>
+    <tr>
+        <th>عنوان جلسه</th>
+        <th>زمان</th>
+        <th>ظرفیت جلسه</th>
+        <th>برگزار کننده</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem=>item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomDateTime.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=>item.Location.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=>item.Initiator.LastName)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

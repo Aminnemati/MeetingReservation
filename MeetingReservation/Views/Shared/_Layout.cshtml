@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزرو اتاق جلسات</title>
+    <link rel="stylesheet" href="~/Contents/css/foundation.css">
+    <link rel="stylesheet" href="~/Contents/css/app.css">
+
+</head>
+<body>
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text">رزرو اتاق جلسات</li>
+            <li>@Html.ActionLink("جدول زمانی","Index","CustomDateTime")</li>
+            <li>@Html.ActionLink("سالن ها","Index","Location")</li>
+            <li>@Html.ActionLink("جلسات","Index","Meeting")</li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li><input type="search" placeholder="جست و جو"></li>
+            <li><button type="button" class="button">جست و جو</button></li>
+        </ul>
+    </div>
+</div>
+<script src="~/Contents/js/vendor/jquery.js"></script>
+<script src="~/Contents/js/vendor/what-input.js"></script>
+<script src="~/Contents/js/vendor/foundation.js"></script>
+<script src="~/Contents/js/app.js"></script>
+    @RenderBody()
+</body>
+</html>
+
