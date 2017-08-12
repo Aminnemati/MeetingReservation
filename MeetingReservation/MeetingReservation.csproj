@@ -140,6 +140,7 @@
     <Content Include="Views\Meeting\Index.cshtml" />
     <Content Include="Views\Location\Index.cshtml" />
     <Content Include="Views\CustomDateTime\Index.cshtml" />
+    <Content Include="Views\Meeting\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
