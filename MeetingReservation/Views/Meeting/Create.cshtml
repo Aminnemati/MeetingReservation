@@ -9,40 +9,40 @@
 <h2 style="padding-right: 10px;">ثبت جلسه جدید</h2>
 @using (Html.BeginForm())
 {
-    <div class="row">
-        <div class="large-4 columns">
+    <div class="grid-x">
+        <div class="large-4 cell">
             <label>عنوان جلسه</label>
             @Html.TextBoxFor(model=>model.Title)
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>نام برگزار کننده</label>
             @Html.TextBoxFor(model=>model.Initiator.FirstName)                                                
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>نام خانوادگی برگزار کننده</label>
             @Html.TextBoxFor(model=>Model.Initiator.LastName)
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>کد ملی</label>
             @Html.TextBoxFor(model=>model.Initiator.NationalCode)
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>تاریخ برگزاری</label>
             @Html.TextBoxFor(model=>model.CustomDateTime.Date,new {type="date"})
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>زمان شروع</label>
             @Html.TextBoxFor(model=>model.CustomDateTime.StartTime,new {type="time"})
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>زمان اتمام</label>
             @Html.TextBoxFor(model => model.CustomDateTime.EndTime, new { type = "time" })
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 cell">
             <label>مکان جلسه</label>
             @Html.DropDownListFor(model=>model.Location.Id, new SelectList(ViewBag.locations, "Id", "Capacity"), "ظرفیت اتاق را انتخاب کنید")                
         </div>
-        <input type="submit" class="success button large-2 columns" value="ثبت"/>
+        <input type="submit" class="success button large-2 cell" value="ثبت"/>
     </div>
 }
 

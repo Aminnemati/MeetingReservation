@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MeetingReservation.DAL;
 using MeetingReservation.Models;
@@ -10,19 +9,26 @@ namespace MeetingReservation.Controllers
 {
     public class MeetingController : Controller
     {
-        MeetingContext context = new MeetingContext();
         // GET: Meeting
         public ActionResult Index()
         {
             List<Meeting> meetings;
-            meetings = context.Meetings.ToList();
+            using (var context=new MeetingContext())
+            {
+                context.Configuration.LazyLoadingEnabled = false;
+                meetings = context.Meetings.ToList();
+
+            }
             return View(meetings);
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            ViewBag.locations = context.Locations.ToList();
+            using (var context=new MeetingContext())
+            {
+                ViewBag.locations = context.Locations.ToList();
+            }
             return View();
         }
 
